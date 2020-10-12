@@ -1,0 +1,16 @@
+{
+  "name": "final-sodimac",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "npm start --prefix server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "Manuel Ortega Carcamo",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
