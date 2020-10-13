@@ -1,25 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
+import { Container, Row, Col } from 'react-bootstrap';
+import NavBarTop from './components/NavBarTop'
+
+//SECCIONES
+import { Home } from './view/Home';
+import Favorites from './view/Favorites.jsx';
+import { NotFound } from './view/NotFound';
+import Register from './view/Register';
+import Login from './view/Login';
+
+
+const App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      {/* <ThemeProvider> */}
+
+        <BrowserRouter>
+            <Row>
+              <Col><NavBarTop/></Col>
+            </Row>
+            <Row>
+              <Col>
+                <Switch>
+                  {/* <Redirect from='/hola' to='/home' /> */}
+            
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/favoritos" component={Favorites} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+
+                  <Route render={NotFound} />
+
+                
+                </Switch>
+              </Col>
+          </Row>
+        </BrowserRouter>
+        
+      {/* </ThemeProvider> */}
+    </Container>
   );
 }
 

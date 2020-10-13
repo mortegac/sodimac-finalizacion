@@ -52,14 +52,14 @@ UserSchema.index(
 
 UserSchema.statics.login = async function( username, password){
 
-  return await this.find({"username" : username,"password" : password})
-  // console.log(`
-  // -username- ${username}
-  // -password- ${password}
-  // `);
-  // const user =  await this.find({"username" : username,"password" : password})
-  // console.log('-login-', user);
-  // return user
+  // return await this.find({"username" : username,"password" : password})
+  console.log(`
+  -username- ${username}
+  -password- ${password}
+  `);
+  const user =  await this.find({"username" : username,"password" : password})
+  console.log('-login-', user);
+  return user
 }
 
 const User = mongoose.model("User", UserSchema);

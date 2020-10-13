@@ -1,7 +1,6 @@
 const express = require("express")
 const { API_PORT} = require('./utils')
 
-
 const { app, error404 } = require('./midlewares/app')
 const db = require('./db/connection')
 
